@@ -1,4 +1,4 @@
-const messageConfig = {
+let configuration = {
   frontContent: "Happy Birthday, Odin One-Eye!",
   insideContent: "From Asgard to Nifelheim, you're the best all-father ever.\n\nLove,",
   closing: {
@@ -9,4 +9,14 @@ const messageConfig = {
       "Thor",
       "Loki"
   ]
-};
+} 
+
+let printCard = function() {
+  console.log(this.frontContent)
+  console.log(this.insideContent)
+
+  this.signatories.forEach(s => console.log(`${this.closing[s]}, ${s}`)
+    )
+}
+
+printCard.call(configuration)
